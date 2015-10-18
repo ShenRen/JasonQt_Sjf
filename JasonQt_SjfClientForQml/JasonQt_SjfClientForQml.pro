@@ -1,6 +1,6 @@
 TEMPLATE = app
 
-QT += qml quick widgets
+QT += qml quick widgets network
 
 include(../JasonQt_SjfFoundation/JasonQt/JasonQt.pri)
 

@@ -120,6 +120,10 @@ void TcpClientManageExtendedForQuick::onReadySettings(TcpDeviceSettings &tcpDevi
     tcpDeviceSettingsBuf["maxReceivedIntervalMSecs"] = tcpDeviceSettings.maxReceivedIntervalMSecs();
     tcpDeviceSettingsBuf["maxDeviceLifetimeMSecs"] = tcpDeviceSettings.maxDeviceLifetimeMSecs();
 
+    tcpDeviceSettingsBuf["useJasonQtEncrypt"] = tcpDeviceSettings.useJasonQtEncrypt();
+    tcpDeviceSettingsBuf["jasonQtEncryptPublicKey"] = tcpDeviceSettings.jasonQtEncryptPublicKey();
+    tcpDeviceSettingsBuf["jasonQtEncryptPrivateKey"] = tcpDeviceSettings.jasonQtEncryptPrivateKey();
+
     tcpDeviceSettingsBuf["removeSjfFlag"] = tcpDeviceSettings.removeSjfFlag();
 
     tcpDeviceSettingsBuf["maxSingleReceivedBytesCount"] = tcpDeviceSettings.maxSingleReceivedBytesCount();
@@ -151,7 +155,12 @@ void TcpClientManageExtendedForQuick::onReadySettings(TcpDeviceSettings &tcpDevi
     tcpDeviceSettings.setMaxReceivedIntervalMSecs(tcpDeviceSettingsBuf["maxReceivedIntervalMSecs"].toInt());
     tcpDeviceSettings.setMaxDeviceLifetimeMSecs(tcpDeviceSettingsBuf["maxDeviceLifetimeMSecs"].toInt());
 
+    tcpDeviceSettings.setUseJasonQtEncrypt(tcpDeviceSettingsBuf["useJasonQtEncrypt"].toBool());
+    tcpDeviceSettings.setJasonQtEncryptPublicKey(tcpDeviceSettingsBuf["jasonQtEncryptPublicKey"].toString());
+    tcpDeviceSettings.setJasonQtEncryptPrivateKey(tcpDeviceSettingsBuf["jasonQtEncryptPrivateKey"].toString());
+
     tcpDeviceSettings.setRemoveSjfFlag(tcpDeviceSettingsBuf["removeSjfFlag"].toBool());
+
 
     tcpDeviceSettings.setMaxSingleReceivedBytesCount(tcpDeviceSettingsBuf["maxSingleReceivedBytesCount"].toInt());
     tcpDeviceSettings.setMaxAltogetherReceivedBytesCount(tcpDeviceSettingsBuf["maxAltogetherReceivedBytesCount"].toInt());

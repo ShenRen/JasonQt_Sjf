@@ -19,6 +19,7 @@ JsfForTcpClientManageExtended {
     }
 
     function onReadySettings(tcpDeviceSettings, tcpClientSettings) {
+        tcpDeviceSettings["jasonQtEncryptPrivateKey"] = "PrivateKey";
         tcpClientSettings["serverPort"] = 23410;
         readySettingsDone(tcpDeviceSettings, tcpClientSettings);
     }

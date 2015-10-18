@@ -3,8 +3,8 @@ import QtQuick.Controls 1.3
 
 ApplicationWindow {
     title: qsTr("Hello World")
-    width: 640
-    height: 480
+    width: 400
+    height: 400
     visible: true
 
     Client {
@@ -13,12 +13,10 @@ ApplicationWindow {
 
     Button {
         id: button1
-        x: 282
-        y: 227
+        anchors.centerIn: parent
         text: qsTr("Button")
 
         onClicked: {
-//            client.testAction("123123");
             client.testAction({
                                   "key": "value"
                               });

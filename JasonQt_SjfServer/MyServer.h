@@ -13,12 +13,6 @@ public slots:
     {
         qDebug() << "testAction" << received;
         send["return"] = "value";
-
-//        static int count = 0;
-//        if(!(++count % 10000))
-//        {
-//            qDebug() << count;
-//        }
     }
 
 private:
